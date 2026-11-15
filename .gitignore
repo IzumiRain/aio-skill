@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+config.local.json
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+dist/
+/*.zip
+*.tmp

@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "index_kind": "metadata-only",
+  "source_layout": "A skill entrypoint is <skill-directory>/SKILL.md; nested directories are valid.",
+  "generated_by": "aio-skill/scripts/build_catalog.py",
+  "catalog_sha256": "a80c5b2566fcd6a8f73257294bd4eafafc2d91e192f9829596c23aecac14c6d2",
+  "skills_count": 3025,
+  "top_level_count": 2932,
+  "nested_count": 93,
+  "catalog": "catalog.jsonl",
+  "categories": [
+    {
+      "id": "engineering",
+      "title": "Engineering",
+      "description": "Programming, architecture, backend, APIs, databases, and software engineering.",
+      "count": 396
+    },
+    {
+      "id": "frontend-mobile",
+      "title": "Frontend & Mobile",
+      "description": "Web UI, frontend frameworks, CSS, accessibility, iOS, and Android.",
+      "count": 116
+    },
+    {
+      "id": "design",
+      "title": "Design",
+      "description": "Visual design, UX, typography, branding, and design systems.",
+      "count": 168
+    },
+    {
+      "id": "devops-cloud",
+      "title": "DevOps & Cloud",
+      "description": "Cloud, deployment, CI/CD, containers, infrastructure, observability, and servers.",
+      "count": 320
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "description": "Defensive security, threat modeling, penetration testing, vulnerabilities, privacy, and hardening.",
+      "count": 247
+    },
+    {
+      "id": "data-ai",
+      "title": "Data & AI",
+      "description": "Data engineering, analytics, machine learning, LLMs, agents, vectors, and model operations.",
+      "count": 126
+    },
+    {
+      "id": "agents-skills",
+      "title": "Agents & Skills",
+      "description": "Agent orchestration, harnesses, memory, skill authoring, and agent workflows.",
+      "count": 308
+    },
+    {
+      "id": "automation-integrations",
+      "title": "Automation & Integrations",
+      "description": "Workflow automation, webhooks, MCP, CRM, messaging, and SaaS connectors.",
+      "count": 188
+    },
+    {
+      "id": "testing-quality",
+      "title": "Testing & Quality",
+      "description": "Unit, integration, E2E, QA, validation, benchmarking, and test strategy.",
+      "count": 199
+    },
+    {
+      "id": "business-operations",
+      "title": "Business & Operations",
+      "description": "Accounting, HR, legal/compliance, procurement, operations, CRM, and vendors.",
+      "count": 181
+    },
+    {
+      "id": "finance-trading",
+      "title": "Finance & Trading",
+      "description": "Finance, markets, trading, ledgers, and financial analysis.",
+      "count": 44
+    },
+    {
+      "id": "marketing-seo",
+      "title": "Marketing & SEO",
+      "description": "Marketing, growth, advertising, SEO, social channels, and conversion.",
+      "count": 126
+    },
+    {
+      "id": "content-media",
+      "title": "Content & Media",
+      "description": "Writing, documents, presentations, video, audio, image, and publishing.",
+      "count": 176
+    },
+    {
+      "id": "product-research",
+      "title": "Product & Research",
+      "description": "Product discovery, requirements, strategy, planning, research, and decisions.",
+      "count": 115
+    },
+    {
+      "id": "productivity-projects",
+      "title": "Productivity & Projects",
+      "description": "Tasks, calendars, notes, knowledge bases, projects, and personal productivity.",
+      "count": 61
+    },
+    {
+      "id": "gaming-3d",
+      "title": "Gaming & 3D",
+      "description": "Game engines, game systems, 3D, rendering, shaders, and interactive scenes.",
+      "count": 31
+    },
+    {
+      "id": "science-health",
+      "title": "Science & Health",
+      "description": "Scientific, medical, health, climate, weather, and specialist domains.",
+      "count": 31
+    },
+    {
+      "id": "uncategorized",
+      "title": "Uncategorized",
+      "description": "Use when the available metadata is too weak for a safer category.",
+      "count": 192
+    }
+  ]
+}

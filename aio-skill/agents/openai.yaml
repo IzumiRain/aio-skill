@@ -1,0 +1,7 @@
+interface:
+  display_name: "AIO Skill"
+  short_description: "Loads only the skills needed from the bundled library"
+  default_prompt: "Use $aio-skill to find and apply the bundled skills relevant to this request."
+
+policy:
+  allow_implicit_invocation: true
