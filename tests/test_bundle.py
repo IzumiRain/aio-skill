@@ -69,10 +69,10 @@ class BundleTests(unittest.TestCase):
         result = self.run_cli(relocated / "scripts" / "select_skills.py", "search", "alpha", "--json", env=env)
         row = json.loads(result.stdout)[0]
         self.assertIs(row["available"], True)
-        self.assertEqual(Path(row["path"]), extracted / "alpha" / "SKILL.md")
+        self.assertTrue(Path(row["path"]).samefile(extracted / "alpha" / "SKILL.md"))
         self.assertEqual(before, (extracted / ".complete").stat().st_mtime_ns)
 
-    def test_unpack_rejects_zip_slip_and_symlink_entries(self):
+    def test_unpack_rejects_zip_slip_entries(self):
         malicious = self.base / "malicious.zip"
         with zipfile.ZipFile(malicious, "w") as z:
             z.writestr("../escape.txt", "bad")

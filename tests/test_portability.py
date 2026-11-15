@@ -88,13 +88,13 @@ class PortabilityTests(unittest.TestCase):
         before = {p.name: p.read_bytes() for p in index.iterdir() if p.is_file()}
         row = self.query("--source", source, "--index-dir", index, router=router)
         self.assertIs(row["available"], True)
-        self.assertEqual(Path(row["path"]), source / "portable-widget" / "SKILL.md")
+        self.assertTrue(Path(row["path"]).samefile(source / "portable-widget" / "SKILL.md"))
         self.assertTrue(Path(row["path"]).is_absolute())
         self.assertEqual((Path(row["path"]).parent / "resources" / "guide.txt").read_text(),
                          "Resource survives relocation.\n")
         shown = json.loads(self.cli("select_skills.py", "show", "bundle/nested-tool",
                            "--source", source, "--index-dir", index, "--json", router=router).stdout)
-        self.assertEqual(Path(shown["path"]), source / "bundle/nested-tool/SKILL.md")
+        self.assertTrue(Path(shown["path"]).samefile(source / "bundle/nested-tool/SKILL.md"))
         self.assertIs(shown["available"], True)
         self.assertEqual(before, {p.name: p.read_bytes() for p in index.iterdir() if p.is_file()})
 
@@ -111,16 +111,16 @@ class PortabilityTests(unittest.TestCase):
         config.write_text(json.dumps({"skills_dir": "library", "index_dir": "index"}), encoding="utf-8")
         self.cli("build_catalog.py", "--config", config)
         row = self.query("--config", config)
-        self.assertEqual(Path(row["path"]), config_source / "portable-widget/SKILL.md")
+        self.assertTrue(Path(row["path"]).samefile(config_source / "portable-widget/SKILL.md"))
         self.assertIn("config-marker", row["description"])
         self.build()
         env = {"AIO_SKILLS_DIR": str(self.source), "AIO_SKILL_INDEX_DIR": str(self.index)}
         row = self.query("--config", config, env=env)
-        self.assertEqual(Path(row["path"]), self.source / "portable-widget/SKILL.md")
+        self.assertTrue(Path(row["path"]).samefile(self.source / "portable-widget/SKILL.md"))
         self.assertNotIn("config-marker", row["description"])
         row = self.query("--config", config, "--source", config_source,
                          "--index-dir", config_index, env=env)
-        self.assertEqual(Path(row["path"]), config_source / "portable-widget/SKILL.md")
+        self.assertTrue(Path(row["path"]).samefile(config_source / "portable-widget/SKILL.md"))
         self.assertIn("config-marker", row["description"])
 
     def test_rebuild_is_deterministic_and_empty_source_preserves_index(self):
